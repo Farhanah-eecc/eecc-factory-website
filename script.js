@@ -142,6 +142,7 @@ const translations = {
       "تأسست شركة EECC لتقديم أحدث تقنيات الذكاء الاصطناعي وإنترنت الأشياء في قطاع معدات مراقبة الطاقة الذكية. وتماشياً مع أهداف رؤية السعودية 2030 في التقدم التكنولوجي والابتكار، نسعى جاهدين للمساهمة في التقدم التكنولوجي للمملكة.",
     "about-text-2":
       "يشرفنا أن نحظى بشهادة صنع في السعودية، وهي شهادة تُجسّد التزامنا بالجودة وفخرنا الوطني. وقد اكتسب نهجنا المبتكر ومنتجاتنا الموثوقة ثقة كبرى الشركات في هذا المجال، بما في ذلك الشركة السعودية للكهرباء. وبصفتنا موردًا رئيسيًا، نزود الشركة السعودية للكهرباء بأنظمة مراقبة ذكية متطورة، مما يُمكّنها من الحفاظ على أعلى معايير توزيع الطاقة",
+    "learn-more-btn": "يتعلم أكثر",
     "pdlc-title": "دورة حياة تطوير المنتج (PDLC)",
     "pdlc-item-1": "توليد الأفكار",
     "pdlc-item-2": "البحث واستكشاف الفرص",
@@ -149,13 +150,17 @@ const translations = {
     "pdlc-item-4": "التطوير المستمر",
     "pdlc-item-5": "الاختبار والتحقق",
     "pdlc-item-6": "الإطلاق",
-    "product-title": "KASHEF - 201",
-    "product-subtitle": "مؤشر ذكي للأخطاء الأرضية",
-    "product-feature-1": "المراقبة والتحكم في الوقت الفعلي للجهاز",
-    "product-feature-2": "كشف دقيق للأخطاء الأرضية",
-    "product-feature-3": "تصميم قوي ودقة عالية",
-    "product-feature-4": "واجهة سهلة الاستخدام",
+    "products-title": "منتجاتنا",
+    "product-title-1": "مؤشرات الخطأ",
+    "product-title-2": "معدات التوزيع الذكية",
+    "product-title-3": "أنظمة المنزل الذكي",
     "learn-more-btn": "إعرف المزيد",
+    "product-text-1":
+      "مؤشرات الأعطال هي أجهزة مراقبة أساسية تُستخدم في أنظمة الطاقة الكهربائية للكشف عن الأعطال والإشارة إليها، مثل قصر الدوائر الكهربائية، أو أعطال التأريض، أو الأحمال الزائدة. تُعزز هذه الأجهزة موثوقية الشبكة من خلال تحديد مواقع الأعطال بسرعة، وتقليل فترات التوقف، وتحسين كفاءة الصيانة.",
+    "product-text-2":
+      "تُعزز معدات التوزيع الذكية كفاءة شبكة الطاقة وموثوقيتها وأتمتتها من خلال دمج أجهزة استشعار متطورة وتقنيات اتصال وتحليلات تعتمد على الذكاء الاصطناعي. تُتيح هذه الأجهزة المراقبة الفورية واكتشاف الأعطال والتحكم عن بُعد، مما يُحسّن توزيع الطاقة مع تقليل فترات التوقف وتكاليف التشغيل.",
+    "product-text-3":
+      "تستخدم أنظمة المنازل الذكية أجهزة مترابطة وتقنيات أتمتة لتعزيز الراحة والأمان وكفاءة الطاقة. تتيح هذه الأنظمة التحكم عن بُعد في الإضاءة والمناخ والأمن والأجهزة المنزلية عبر تطبيقات الهاتف المحمول أو المساعدين الصوتيين، مما يوفر بيئة معيشية أكثر راحة وذكاءً.",
     "smart-home-title": "أنظمة المنزل الذكي",
     "smart-home-subtitle": "تحكم كامل وراحة مطلقة",
     "smart-home-feature-1": "التحكم عن بعد عبر تطبيق EECC للمنزل الذكي",
@@ -320,6 +325,7 @@ const translations = {
       "إضافات اختيارية: تشمل جهاز PDA للتحكم عن بعد ومحول تركيب للاستخدام المرن.",
     "feature-10":
       "تقارير IEC104 و DNP3.0 مباشرة إلى أنظمة SCADA دون الحاجة إلى بوابة وسيطة.",
+    "section-title": "أنظمة التوزيع الذكية",
   },
   en: {
     translate: "العربية",
@@ -339,13 +345,17 @@ const translations = {
     "pdlc-item-4": "Continuous Development",
     "pdlc-item-5": "Testing and Verification",
     "pdlc-item-6": "Launch",
-    "product-title": "KASHEF - 201",
-    "product-subtitle": "Smart Ground Fault Indicator",
-    "product-feature-1": "Real-time monitoring and control of the device",
-    "product-feature-2": "Accurate ground fault detection",
-    "product-feature-3": "Robust design and high precision",
-    "product-feature-4": "User-friendly interface",
+    "products-title": "Our Products",
+    "product-title-1": "Fault Indicators",
+    "product-title-2": "Smart Distribution Equipment",
+    "product-title-3": "Smart Home Systems",
     "learn-more-btn": "Learn More",
+    "product-text-1":
+      "Fault indicators are essential monitoring devices used in electrical power systems to detect and signal faults such as short circuits, ground faults, or overloads. These devices enhance grid reliability by quickly identifying fault locations, reducing downtime, and improving maintenance efficiency.",
+    "product-text-2":
+      "Smart distribution equipment enhances power grid efficiency, reliability, and automation by integrating advanced sensors, communication technologies, and AI-driven analytics. These devices enable real-time monitoring, fault detection, and remote control, optimizing energy distribution while reducing downtime and operational costs.",
+    "product-text-3":
+      "Smart home systems use interconnected devices and automation technology to enhance convenience, security, and energy efficiency. These systems allow remote control of lighting, climate, security, and appliances via mobile apps or voice assistants, creating a more comfortable and intelligent living environment.",
     "smart-home-title": "Smart Home Systems",
     "smart-home-subtitle": "Full control and absolute comfort",
     "smart-home-feature-1": "Remote control through the EECC smart home app",
@@ -522,6 +532,7 @@ const translations = {
       "Optional accessories: Include a PDA for remote control and a mounting adapter for flexible use.",
     "feature-10":
       "Direct IEC104 and DNP3.0 reporting to SCADA systems without the need for an intermediate gateway.",
+    "section-title": "Smart Distribution Systems",
   },
 };
 

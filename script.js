@@ -93,56 +93,32 @@ function emailSend() {
 
 
 
-// function emailSend(){
-
-//     var userName = document.getElementById('name').value;
-//     var email = document.getElementById('email').value;
-//     var phone = document.getElementById('phone').value;
-//     var message = document.getElementById('message').value;
-
-//     var messageBody = "Name : " + userName +
-//     "<br/> Email : " + email +
-//     "<br/> Phone : " + phone +
-//     "<br/> The Message : " + message;
-//     Email.send({
-//     Host : "smtp.elasticemail.com",
-//     Username : "Info@eecl.sa",
-//     Password : "0045ED500F9638134423494C63B9766BE8DB",
-//     To : 'Info@eecl.sa',
-//     From : "Info@eecl.sa",
-//     Subject : "Message From EECC Contact Form",
-//     Body : messageBody
-//     }).then(
-//     message => {
-//         if(message=='OK'){
-//             swal("تم الإرسال بنجاح", "سنتواصل معك في أقرب وقت!", "success");
-//           hideSubscriptionForm();
-//         }
-//         else{
-//             swal("خطأ", "حدث خطأ يرجى المحاولة مرة اخرى!", "error");
-//         }
-//     }
-//     );
-// }
-
-
-
-
 // Translations
 
 const translations = {
   ar: {
     translate: "English",
+    //nav section
     "home-link": "الرئيسية",
     "about-link": "من نحن",
     "products-link": "منتجاتنا",
     "contact-link": "تواصل معنا",
+
+    //buttons
+    "learn-more-btn": "يتعلم أكثر",
+    "download-data-sheet": "تنزيل ورقة البيانات",
+    "download-operation-manual": "تنزيل دليل التشغيل",
+    "watch-video": "مشاهدة الفيديو",
+    close: "إغلاق",
+
+    //about section
     "about-title": "من نحن",
     "about-text-1":
       "تأسست شركة EECC لتقديم أحدث تقنيات الذكاء الاصطناعي وإنترنت الأشياء في قطاع معدات مراقبة الطاقة الذكية. وتماشياً مع أهداف رؤية السعودية 2030 في التقدم التكنولوجي والابتكار، نسعى جاهدين للمساهمة في التقدم التكنولوجي للمملكة.",
     "about-text-2":
       "يشرفنا أن نحظى بشهادة صنع في السعودية، وهي شهادة تُجسّد التزامنا بالجودة وفخرنا الوطني. وقد اكتسب نهجنا المبتكر ومنتجاتنا الموثوقة ثقة كبرى الشركات في هذا المجال، بما في ذلك الشركة السعودية للكهرباء. وبصفتنا موردًا رئيسيًا، نزود الشركة السعودية للكهرباء بأنظمة مراقبة ذكية متطورة، مما يُمكّنها من الحفاظ على أعلى معايير توزيع الطاقة",
-    "learn-more-btn": "يتعلم أكثر",
+
+    //pdlc section
     "pdlc-title": "دورة حياة تطوير المنتج (PDLC)",
     "pdlc-item-1": "توليد الأفكار",
     "pdlc-item-2": "البحث واستكشاف الفرص",
@@ -150,64 +126,24 @@ const translations = {
     "pdlc-item-4": "التطوير المستمر",
     "pdlc-item-5": "الاختبار والتحقق",
     "pdlc-item-6": "الإطلاق",
+
+    //products section
     "products-title": "منتجاتنا",
     "product-title-1": "مؤشرات الخطأ",
     "product-title-2": "معدات التوزيع الذكية",
     "product-title-3": "أنظمة المنزل الذكي",
-    "learn-more-btn": "إعرف المزيد",
     "product-text-1":
       "مؤشرات الأعطال هي أجهزة مراقبة أساسية تُستخدم في أنظمة الطاقة الكهربائية للكشف عن الأعطال والإشارة إليها، مثل قصر الدوائر الكهربائية، أو أعطال التأريض، أو الأحمال الزائدة. تُعزز هذه الأجهزة موثوقية الشبكة من خلال تحديد مواقع الأعطال بسرعة، وتقليل فترات التوقف، وتحسين كفاءة الصيانة.",
     "product-text-2":
       "تُعزز معدات التوزيع الذكية كفاءة شبكة الطاقة وموثوقيتها وأتمتتها من خلال دمج أجهزة استشعار متطورة وتقنيات اتصال وتحليلات تعتمد على الذكاء الاصطناعي. تُتيح هذه الأجهزة المراقبة الفورية واكتشاف الأعطال والتحكم عن بُعد، مما يُحسّن توزيع الطاقة مع تقليل فترات التوقف وتكاليف التشغيل.",
     "product-text-3":
       "تستخدم أنظمة المنازل الذكية أجهزة مترابطة وتقنيات أتمتة لتعزيز الراحة والأمان وكفاءة الطاقة. تتيح هذه الأنظمة التحكم عن بُعد في الإضاءة والمناخ والأمن والأجهزة المنزلية عبر تطبيقات الهاتف المحمول أو المساعدين الصوتيين، مما يوفر بيئة معيشية أكثر راحة وذكاءً.",
-    "smart-home-title": "أنظمة المنزل الذكي",
-    "smart-home-subtitle": "تحكم كامل وراحة مطلقة",
-    "smart-home-feature-1": "التحكم عن بعد عبر تطبيق EECC للمنزل الذكي",
-    "smart-home-feature-2": "جدولة تشغيل وإيقاف الأجهزة",
-    "smart-home-feature-3": "توفير الطاقة من خلال إدارة الاستهلاك الذكي",
-    "smart-home-feature-4": "التكامل مع أجهزة المنزل الذكي الأخرى",
-    "smart-switch-title": "مفتاح ذكي بتقنية WIFI-RF",
-    "smart-switch-subtitle": "تحكم لاسلكي مرن وسهل الاستخدام",
-    "smart-switch-feature-1": "دعم تقنيتي التردد الراديو والواي فاي",
-    "smart-switch-feature-2": "إمكانية التركيب في الأماكن الصعبة",
-    "smart-switch-feature-3": "سهولة التكامل مع تطبيق EECC للمنزل الذكي",
-    "smart-switch-feature-4": "أمان معزز من خلال التحكم اللاسلكي",
-    "kashef-501-title": "KASHEF - 501",
-    "kashef-501-subtitle": "مؤشرات الخطأ العلوية",
-    "kashef-501-feature-1":
-      "تتبع شكل موجة التيار المتردد الذكي للتمييز بين الأشكال المختلفة لأعطال الأنظمة ثلاثية الطور",
-    "kashef-501-feature-2":
-      "مجموعة واسعة من أجهزة الكشف الفعالة تبدأ من 1 أمبير من التيار حتى 1000 أمبير",
-    "kashef-501-feature-3":
-      "تؤدي الأجهزة الطرفية الأقل إلى سهولة التثبيت باستخدام نظام الاتصالات المضمن",
-    "kashef-501-feature-4":
-      "طاقة متجددة بالكامل تعمل باستخدام تقنيات الطاقة الشمسية وحصاد الطاقة تعزيز استدامة الشبكة الكهربائية",
-    "kashef-501-feature-5": "دعم الصيانة الوقائية",
-    "kashef-001-title": "KASHEF - 001",
-    "kashef-001-subtitle": "تعزيز الكشف الموثوق كفاءة",
-    "kashef-001-feature-1": "الكشف الدقيق عن خطأ الأرض",
-    "kashef-001-feature-2": "تصميم قوي",
-    "kashef-001-feature-3": "مؤشر متعدد الألوان",
-    "kashef-001-feature-4": "واجهة سهلة الاستخدام",
-    "sefi-solar-kit-title": "SEFI - طقم الطاقة الشمسية",
-    "sefi-solar-kit-description":
-      "قامت EECC بتطوير مجموعة طاقة شمسية كحلاً اختيارياً لتوفير طاقة EECC-SEFI في الحالات التي يتم تركيب SEFI على RMUs التي لا تحتوي على محطة توزيع متصلة، أو أن المحطة الفرعية للتوزيع بعيدة.",
-    "kashef-501-overhead-fault-indicator-title": "مؤشر ممرات الخطأ العلوية",
-    "kashef-501-multifunctional-fault-detection-system-title":
-      "نظام كشف الأعطال متعدد الوظائف",
-    "kashef-501-feature-1":
-      "تتبع ذكي لموجة AC للتمييز بين مختلف أنواع أخطاء أنظمة الثلاثي المرحلة.",
-    "kashef-501-feature-2":
-      "مجموعة واسعة للاكتشاف الفعال تبدأ من 1 أمبير من التيار حتى 1000 أمبير.",
-    "kashef-501-feature-3":
-      "مدعوم بالكامل بالطاقة المتجددة باستخدام تقنيات الطاقة الشمسية وجمع الطاقة.",
-    "kashef-501-feature-4":
-      "تقارير مباشرة إلى أنظمة SCADA بدون الحاجة إلى بوابة وسيطة.",
-    "kashef-501-feature-5":
-      "تتبع ذكي لموجة AC: يميز بين مختلف أنواع الأخطاء في أنظمة الثلاثي المرحلة، مما يحسن دقة اكتشاف الأخطاء.",
+
+    //video section
     "doctors-section-title": "عرض توضيحي لمزايا المنتج",
     "kashef-101-video-author": '"كاشف 101" مبين الأعطال الذكي"',
+
+    //qhse section
     "qhse-policy-title": "EECC - QHSE POLICY",
     "qhse-policy-subtitle": "دليل متكامل",
     "qhse-quality-title": "الجودة",
@@ -220,6 +156,8 @@ const translations = {
     "qhse-environment-title": "البيئة",
     "qhse-environment-description":
       "الالتزام بالممارسات المستدامة وتقليل بصمتنا البيئية.",
+
+    //contact section
     "contact-section-title": "• تواصل معنا •",
     "contact-name-label": "الاسم",
     "contact-email-label": "البريد الإلكتروني",
@@ -228,6 +166,8 @@ const translations = {
     "contact-submit-btn": "إرسال",
     "contact-info-title": "معلومات الاتصال",
     "join-us-message": "❝ انضم إلينا واستمتع بأفضل المنتجات",
+
+    //footer section
     "footer-contact-title": "اتصل بنا",
     "footer-quick-links-title": "روابط سريعة",
     "footer-quick-link-home": "الرئيسية",
@@ -235,109 +175,231 @@ const translations = {
     "footer-quick-link-products": "منتجاتنا",
     "footer-quick-link-contact": "تواصل معنا",
     "footer-copyright": "©2024 هندسة الإختبارات. جميع الحقوق محفوظة.",
-    "kashef-201-title": "KASHEF - 201",
-    "kashef-201-description":
-      "مؤشر ذكي للأخطاء الأرضية مع ميزات متقدمة للمراقبة والتحكم في الوقت الفعلي.",
-    "kashef-201-connectivity-title": "إمكانية الاتصال",
-    "kashef-201-connectivity-description":
-      "مراقبة وتحكم في الوقت الفعلي للجهاز باستخدام أنظمة SCADA أو الهاتف المحمول للمشغل عبر الرسائل القصيرة",
-    "kashef-201-accuracy-title": "كشف دقيق لأخطاء التأريض",
-    "kashef-201-accuracy-description":
-      "يستخدم الحث الكهرومغناطيسي والتحكم بالحاسوب الدقيق للكشف الدقيق عن الأخطاء",
-    "kashef-201-design-title": "تصميم قوي",
-    "kashef-201-design-description":
-      "دقة عالية، مقاومة قوية للتداخل وعمر بطارية طويل",
-    "kashef-201-interface-title": "واجهة سهلة الاستخدام",
-    "kashef-201-interface-description":
-      "زر اختبار / إعادة ضبط لسهولة الاختبار ووظائف إعادة الضبط",
-    "kashef-201-what-is-it": "ما هو KASHEF 201؟",
-    "kashef-201-explanation":
-      "EECC-SEFI هو مؤشر ذكي لأخطاء التأريض، يستخدم على نطاق واسع في معدات RMU وSwitch-Gear للكشف عن أخطاء التأريض في خطوط نقل الطاقة مع ميزات اتصال تتيح المراقبة والتحكم عن بعد",
-    "smart-home-systems-title": "أنظمة المنزل الذكي",
-    "smart-home-systems-description":
-      "تتيح أنظمة المنزل الذكي التحكم الكامل في الأجهزة الكهربائية وأنظمة الإضاءة في المنازل من خلال تطبيقات الهاتف المحمول، مما يوفر تجربة معيشية مريحة وآمنة.",
-    "smart-home-remote-control": "التحكم عن بعد عبر تطبيق EECC للمنزل الذكي",
-    "smart-home-scheduling": "جدولة تشغيل وإيقاف الأجهزة",
-    "smart-home-energy-savings":
-      "توفير الطاقة من خلال الإدارة الذكية للاستهلاك",
-    "smart-home-integration": "التكامل مع أجهزة المنزل الذكية الأخرى",
-    "smart-home-systems-offering": "تقدم EECC أنظمة تحكم فريدة للمنزل الذكي.",
-    "wifi-rf-smart-switch-title": "مفتاح ذكي بتقنية WIFI-RF",
-    "wifi-rf-smart-switch-description":
-      "يوفر المفتاح الذكي بتقنية WIFI-RF للمستخدمين تحكمًا لاسلكيًا في الأجهزة الكهربائية باستخدام تقنيتي WIFI و RF، مما يتيح المرونة وسهولة الاستخدام.",
-    "wifi-rf-smart-switch-rf-wifi-support":
-      "دعم لتقنيتي RF و WIFI لخيارات تحكم متعددة",
-    "wifi-rf-smart-switch-installation":
+
+    // ترجمات صفحة أنظمة التوزيع الذكية (Smart Distribution Products)
+    //kashef-701
+    "section-title-smart-distribution": "أنظمة التوزيع الذكية",
+    "kashef-701-title": "هابس 71",
+    "kashef-701-description":
+      "كاشف EECC-DTSMS هو حل مراقبة متقدم مصمم لتعزيز أداء وموثوقية محولات التوزيع. من خلال التحليل المستمر للمعلمات الكهربائية الحرجة، يضمن جودة الطاقة، ويقلل الخسائر، ويقيم صحة الشبكة.",
+    "kashef-701-feature-1":
+      "كشف الخسائر: يحدد الخسائر الفنية وغير الفنية، مما يساعد المرافق على تقليل هدر الطاقة وتحسين توزيع الطاقة.",
+    "kashef-701-feature-2":
+      "معالجة البيانات في الوقت الفعلي: تعالج وحدة تحكم ذكية البيانات المجمعة، مما يوفر تحليلًا مباشرًا لظروف الشبكة.",
+    "kashef-701-feature-3":
+      "تكامل SCADA وعداد ذكي: متوافق تمامًا مع SCADA، مما يتيح المراقبة عن بُعد وتحليلات البيانات المتقدمة.",
+    "kashef-701-feature-4": "مراقبة جودة الطاقة",
+    "kashef-701-feature-4-item-1":
+      "يتتبع تقلبات الجهد، والتوافقيات، ومعامل القدرة، وتغيرات التردد.",
+    "kashef-701-feature-4-item-2":
+      "يحدد الشذوذ التي قد تؤثر على الأحمال المتصلة وكفاءة النظام.",
+    "kashef-701-feature-5": "تحليل فقدان الطاقة",
+    "kashef-701-feature-5-item-1":
+      "يكتشف الخسائر الفنية وغير الفنية في شبكة التوزيع.",
+    "kashef-701-feature-5-item-2":
+      "يوفر رؤى قائمة على البيانات لتقليل هدر الطاقة وتحسين الكفاءة.",
+    "kashef-701-feature-6": "تقييم صحة الشبكة",
+    "kashef-701-feature-6-item-1":
+      "يراقب درجة حرارة المحول، وظروف الحمل، وحالة العزل.",
+    "kashef-701-feature-6-item-2":
+      "يكتشف العلامات المبكرة للأعطال، مما يتيح الصيانة التنبؤية لتقليل وقت التوقف.",
+    "kashef-701-feature-7": "استخدام البيانات والاتصال",
+    "kashef-701-feature-7-item-1":
+      "ينقل بيانات التشغيل في الوقت الفعلي إلى العدادات الذكية وأنظمة SCADA.",
+    "kashef-701-feature-7-item-2":
+      "يمكّن من اكتشاف الأعطال، وتحسين الشبكة، والتحليلات المتقدمة لتحسين التحكم التشغيلي.",
+
+    //kashef-81
+    "kashef-81-title": "هابس 81",
+    "kashef-81-description":
+      "مرحلات الحماية هي أجهزة حيوية في أنظمة الطاقة الكهربائية مصممة لاكتشاف الأعطال والظروف غير الطبيعية، مثل التيار الزائد، والجهد الزائد، والدوائر القصيرة. تقوم تلقائيًا بعزل الأقسام المعطلة من الشبكة عن طريق تشغيل قواطع الدائرة، مما يمنع تلف المعدات ويقلل من انقطاع التيار.",
+    "kashef-81-feature-1": "ذاتية الطاقة وخالية من الصيانة.",
+    "kashef-81-feature-1-item-1":
+      "تعمل بدون مصدر طاقة خارجي عن طريق استمداد الطاقة من محول التيار.",
+    "kashef-81-feature-1-item-2":
+      "تصميم محكم، مضاد للتداخل مناسب للبيئات القاسية.",
+    "kashef-81-feature-2": "وظائف حماية متقدمة.",
+    "kashef-81-feature-2-item-1":
+      "حماية التيار الزائد ثلاثية المراحل مع منحنيات عكسية بمعيار IEC.",
+    "kashef-81-feature-2-item-2":
+      "حماية التسلسل الصفري (خطأ التأريض) ثنائية المرحلة.",
+    "kashef-81-feature-2-item-3": "حظر تيار الاندفاع لمنع التشغيل الخاطئ.",
+    "kashef-81-feature-2-item-4":
+      "حماية من الحمل الزائد مع إعدادات إنذار أو تشغيل قابلة للتكوين.",
+    "kashef-81-feature-3": "معالجة عالية الأداء.",
+    "kashef-81-feature-3-item-1":
+      "اكتشاف سريع للأعطال مع خوارزميات نافذة بيانات قصيرة للاستجابة السريعة.",
+    "kashef-81-feature-3-item-2":
+      "يدعم أخذ عينات التيار صفري التسلسل الخارجي والداخلي.",
+    "kashef-81-feature-3-item-3": "نطاق قياس واسع مع تدرج ديناميكي تلقائي.",
+    "kashef-81-feature-4": "واجهة سهلة الاستخدام.",
+    "kashef-81-feature-4-item-1":
+      "شاشة LCD 64×128 مع دعم متعدد اللغات (الصينية/الإنجليزية).",
+    "kashef-81-feature-4-item-2":
+      "تسجيل الأحداث مع تخزين ما يصل إلى 100 سجل في ذاكرة غير متطايرة.",
+    "kashef-81-feature-4-item-3": "اتصال RS-485 مع بروتوكولات مفتوحة للتكامل.",
+    "kashef-81-feature-5": "تصميم كهربائي وميكانيكي قوي.",
+    "kashef-81-feature-5-item-1":
+      "نطاق درجة حرارة تشغيل واسع (-30 درجة مئوية إلى 70 درجة مئوية).",
+    "kashef-81-feature-5-item-2":
+      "حاوية بتصنيف IP54 للوحات الأمامية والجانبية، IP30 للوحة الخلفية.",
+    "kashef-81-feature-5-item-3":
+      "مقاومة عالية للتداخل الكهرومغناطيسي، والاهتزاز، والصدمات.",
+
+    // ترجمات صفحة أنظمة المنزل الذكي (Smart Home Solutions)
+    "section-title-smart-home": "أنظمة المنزل الذكي",
+    "wifi-switches-title": "مفاتيح واي فاي",
+    "wifi-switches-description":
+      "يتيح المفتاح الذكي المزود بتقنية واي فاي التحكم عن بُعد في الأجهزة الكهربائية من خلال شبكة واي فاي، مما يجعل إدارة الأجهزة أسهل ويعزز تجربة المستخدم",
+    "wifi-switches-feature-1": "التحكم عن بُعد عبر شبكة واي فاي",
+    "wifi-switches-feature-2": "سهولة التركيب والاستخدام",
+    "wifi-switches-feature-3": "دعم البرمجة والجدولة اليومية",
+    "wifi-rf-switch-title": "مفتاح ذكي بتقنية واي فاي/تردد الراديو",
+    "wifi-rf-switch-description":
+      "يوفر المفتاح الذكي بتقنية واي فاي-تردد الراديو للمستخدمين تحكمًا لاسلكيًا في الأجهزة الكهربائية باستخدام تقنيتي واي فاي وتردد الراديو، مما يوفر المرونة وسهولة الاستخدام",
+    "wifi-rf-switch-feature-1":
+      "دعم تقنيتي تردد الراديو وواي فاي لخيارات تحكم متعددة",
+    "wifi-rf-switch-feature-2":
       "إمكانية التركيب في الأماكن التي يصعب الوصول إليها",
-    "wifi-rf-smart-switch-integration":
-      "سهولة التكامل مع تطبيق EECC للمنزل الذكي",
-    "wifi-rf-smart-switch-security": "أمان معزز من خلال التحكم اللاسلكي",
-    "kashef-501-title": "KASHEF-501",
-    "kashef-501-description":
-      "تعمل مؤشرات الخطأ العلوية على اكتشاف الأعطال في أنظمة التوزيع الكهربائية فورًا، مما يساعد على تقليل أوقات الانقطاع وتحسين أداء الشبكة.",
-    "kashef-501-ac-waveform-monitoring":
-      "تتبع ذكي لشكل موجة التيار المتردد للتمييز بين أشكال مختلفة من أعطال أنظمة الثلاث مراحل",
-    "kashef-501-detection-range":
-      "نطاق واسع من الكشف الفعال يبدأ من 1 أمبير من التيار حتى 1000 أمبير",
-    "kashef-501-easy-installation":
-      "أقل عدد من الملحقات يؤدي إلى سهولة التركيب مع نظام اتصال مدمج",
-    "kashef-501-renewable-power":
-      "يعمل بالكامل بالطاقة المتجددة باستخدام تقنيات الطاقة الشمسية وحصاد الطاقة",
-    "kashef-501-grid-sustainability": "تعزيز استدامة الشبكة الكهربائية",
-    "kashef-501-preventive-maintenance": "دعم الصيانة الوقائية",
-    "kashef-001-title": "KASHEF 001 - كشف موثوق وكفاءة معززة",
-    "kashef-001-what-is-it": "ما هو KASHEF 001؟",
-    "kashef-001-explanation":
-      "EECC-EFI هو مؤشر خطأ التأريض، يستخدم على نطاق واسع في معدات RMU وSwitch-Gear للكشف عن أخطاء التأريض في خطوط نقل الطاقة",
-    "kashef-001-accuracy-title": "كشف دقيق لأخطاء التأريض",
-    "kashef-001-accuracy-description":
-      "يستخدم الحث الكهرومغناطيسي والتحكم بالحاسوب الدقيق للكشف الدقيق عن الأخطاء",
-    "kashef-001-design-title": "تصميم قوي",
-    "kashef-001-design-description":
-      "دقة عالية، مقاومة قوية للتداخل وعمر بطارية طويل",
-    "kashef-001-indicator-title": "مؤشر متعدد الألوان",
-    "kashef-001-indicator-description":
-      "مؤشرات LED لرؤية الخطأ الفورية: أحمر لخطأ التأريض، أصفر لفقدان الطاقة، أزرق للبطارية المنخفضة",
-    "kashef-001-interface-title": "واجهة سهلة الاستخدام",
-    "kashef-001-interface-description":
-      "زر اختبار/إعادة ضبط لسهولة الاختبار ووظائف إعادة الضبط",
-    "sefi-solar-power-kit": "SEFI - طقم الطاقة الشمسية",
-    "sefi-solar-power-kit-details": "تفاصيل طقم الطاقة الشمسية SEFI",
-    "sefi-solar-power-kit-description":
-      "قامت EECC بتطوير مجموعة طاقة شمسية كحلاً اختيارياً لتوفير طاقة EECC-SEFI في الحالات التي يتم تركيب SEFI على RMUs التي لا تحتوي على محطة توزيع متصلة، أو أن المحطة الفرعية للتوزيع بعيدة.",
-    "smart-overhead-error-path-indicator": "مؤشر ممرات الخطأ العلوية الذكي",
-    "smart-overhead-error-path-indicator-title":
-      "مؤشر ممرات الخطأ العلوية الذكي",
-    "features-title": "الميزات",
-    "feature-1":
-      "تتبع ذكي لشكل موجة التيار المتردد للتمييز بين أنواع مختلفة من أعطال أنظمة الثلاث مراحل، مما يحسن دقة اكتشاف الأعطال.",
-    "feature-2":
-      "نطاق كشف واسع: يكتشف بكفاءة التيارات من 1 أمبير إلى 1000 أمبير، مما يجعله مناسبًا لتطبيقات متنوعة.",
-    "feature-3":
-      "طاقة متجددة: يعمل بالكامل بتقنيات الطاقة الشمسية وحصاد الطاقة.",
-    "feature-4": "تقنية استشعار متكاملة: تكتشف الأعطال الكهربائية بكفاءة.",
-    "feature-5": "اتصال RF و GPRS: يمكّن المراقبة عن بعد ونقل البيانات.",
-    "feature-6": "تحديد المواقع GIS: يسمح بتتبع دقيق لموقع الخطأ.",
-    "feature-7":
-      "كفاءة التكلفة: يقلل من القوى العاملة واستخدام المركبات والتكاليف التشغيلية.",
-    "feature-8": "مؤشرات LED للأعطال: تحدد أنواع الأعطال بإشارات ملونة مميزة.",
-    "feature-9":
-      "إضافات اختيارية: تشمل جهاز PDA للتحكم عن بعد ومحول تركيب للاستخدام المرن.",
-    "feature-10":
-      "تقارير IEC104 و DNP3.0 مباشرة إلى أنظمة SCADA دون الحاجة إلى بوابة وسيطة.",
-    "section-title": "أنظمة التوزيع الذكية",
+    "wifi-rf-switch-feature-3": "سهولة التكامل مع تطبيق EECC للمنزل الذكي",
+    "wifi-rf-switch-feature-4": "أمان معزز من خلال التحكم اللاسلكي",
+
+    // ترجمات صفحة مؤشرات الخطأ (Fault Indicators)
+    "section-title-fault-indicators": "مؤشرات الخطأ",
+    "kashef-101-title": "كاشف 101",
+    "kashef-101-description":
+      "كاشف EECC-SFI هو مؤشر خطأ ذكي مصمم لكابلات الطاقة تحت الأرض في أنظمة RMU. يكتشف أخطاء التأريض وأخطاء التيار الزائد، مما يعزز موثوقية شبكة الطاقة ويقلل من وقت التوقف. يستخدم الجهاز الحث الكهرومغناطيسي ووحدة تحكم ذكية، مع اتصال واي فاي وخلوي (IEC104) للمراقبة عن بُعد.",
+    "kashef-101-feature-1": "كشف دقيق للخطأ:",
+    "kashef-101-feature-1-item-1": "خطأ التأريض (LED أحمر)",
+    "kashef-101-feature-1-item-2": "خطأ الدائرة القصيرة (LED أحمر للمرحلة)",
+    "kashef-101-feature-1-item-3": "فقدان الطاقة (LED أصفر)",
+    "kashef-101-feature-1-item-4": "بطارية منخفضة (LED أزرق)",
+    "kashef-101-feature-2":
+      "الاتصال عن بُعد: حامل خارجي للتركيب، مشابك استشعار للكابلات.",
+    "kashef-101-feature-3": "خادم ويب واي فاي: يبسط التكوين وإعدادات المعلمات.",
+    "kashef-101-feature-4":
+      "إعادة ضبط تلقائية: تعيد الضبط بعد إزالة الخطأ عبر استعادة الجهد، أو الأخطاء العابرة.",
+    "kashef-101-feature-5":
+      "إعادة ضبط المؤقت: يعيد ضبط الخطأ إذا مرت مدة زمنية محددة مسبقًا دون استعادة الطاقة لمنع حلقة إشارة لا نهائية.",
+    "kashef-101-feature-6":
+      "إعادة ضبط يدوية: إعادة الضبط عبر زر الاختبار/إعادة الضبط.",
+    "kashef-101-feature-7": "اختبار/إعادة ضبط عن بُعد: عبر أنظمة SCADA.",
+    "kashef-101-feature-8":
+      "قياس التيار: مراقبة التيار صفري التسلسل والمرحلة عبر IEC104.",
+    "kashef-101-feature-9":
+      "عمر بطارية طويل: أكثر من 5 سنوات، قابلة للاستبدال بسهولة دون أدوات.",
+    "kashef-101-feature-10":
+      "سهولة التركيب: حامل خارجي للتركيب، مشابك استشعار للكابلات.",
+
+    "kashef-002-title": "كاشف 002",
+    "kashef-002-description":
+      "كاشف EECC-FI هو مؤشر خطأ ثلاثي المراحل مصمم لكابلات الطاقة تحت الأرض في أنظمة RMU. يكتشف ويحدد مواقع أخطاء التأريض وأخطاء التيار الزائد، مما يحسن موثوقية الشبكة ويقلل من وقت التوقف. يستخدم الجهاز الحث الكهرومغناطيسي ووحدة تحكم ذكية مع تكوين قائم على واي فاي لسهولة الإعداد.",
+    "kashef-002-feature-1":
+      "كشف دقيق للخطأ: أخطاء التأريض (LED أحمر)، الدوائر القصيرة (LED أحمر للمرحلة)، فقدان الطاقة (LED أصفر)، وبطارية منخفضة (LED أزرق).",
+    "kashef-002-feature-2": "خادم ويب واي فاي: يبسط التكوين وإعدادات المعلمات.",
+    "kashef-002-feature-3":
+      "إعادة ضبط تلقائية: تعيد الضبط بعد إزالة الخطأ عبر استعادة الجهد، أو الأخطاء العابرة.",
+    "kashef-002-feature-4":
+      "إعادة ضبط المؤقت: يعيد ضبط الخطأ إذا مرت مدة زمنية محددة مسبقًا دون استعادة الطاقة لمنع حلقة إشارة لا نهائية.",
+    "kashef-002-feature-5":
+      "إعادة ضبط يدوية: إعادة الضبط عبر زر الاختبار/إعادة الضبط.",
+    "kashef-002-feature-6":
+      "قياس التيار: يدعم مراقبة التيار صفري التسلسل والمرحلة عبر MODBUS RTU (RS-485).",
+    "kashef-002-feature-7":
+      "تصميم موفر للطاقة: بطارية ليثيوم طويلة العمر، قابلة للاستبدال دون أدوات.",
+    "kashef-002-feature-8":
+      "سهولة التركيب: حامل خارجي للتركيب، مشابك استشعار للكابلات.",
+
+    "kashef-001-title": "كاشف 001",
+    "kashef-001-description":
+      "كاشف EECC-EFI هو مؤشر خطأ التأريض للشبكة تحت الأرض، مصمم لاكتشاف وتحديد مواقع أخطاء التأريض في الكابلات تحت الأرض، مما يعزز موثوقية توزيع الطاقة ويقلل من وقت التوقف.",
+    "kashef-001-feature-1":
+      "كشف دقيق للخطأ: يستخدم الحث الكهرومغناطيسي ومعالجة وحدة التحكم الدقيقة.",
+    "kashef-001-feature-2":
+      "مؤشرات إنذار LED: أحمر لخطأ التأريض، أزرق للبطارية المنخفضة، أصفر لفقدان الطاقة.",
+    "kashef-001-feature-3":
+      "تصميم منخفض الطاقة: بطارية ليثيوم طويلة الأمد (أكثر من 10 سنوات).",
+    "kashef-001-feature-4":
+      "إعادة ضبط تلقائية: تعيد الضبط بعد إزالة الخطأ عبر استعادة الجهد، أو الأخطاء العابرة.",
+    "kashef-001-feature-5":
+      "إعادة ضبط المؤقت: يعيد ضبط الخطأ إذا مرت مدة زمنية محددة مسبقًا دون استعادة الطاقة لمنع حلقة إشارة لا نهائية.",
+    "kashef-001-feature-6":
+      "إعادة ضبط يدوية: إعادة الضبط عبر زر الاختبار/إعادة الضبط.",
+    "kashef-001-feature-7":
+      "سهولة التركيب: حامل خارجي للتركيب؛ مشابك استشعار حول كابلات الطاقة.",
+
+    "kashef-201-title": "كاشف 201",
+    "kashef-201-description":
+      "كاشف EECC-SEFI هو مؤشر ذكي لخطأ التأريض مصمم لكابلات الطاقة تحت الأرض في أنظمة وحدة الحلقة الرئيسية (RMU). يكتشف ويحدد مواقع أخطاء التأريض (أخطاء الأرض)، ويعزز موثوقية شبكة الطاقة ويقلل من وقت التوقف مع القدرة على الاتصال عن بُعد بأنظمة SCADA والرسائل القصيرة.",
+    "kashef-201-feature-1": "كشف دقيق للخطأ:",
+    "kashef-201-feature-1-item-1": "خطأ التأريض (LED أحمر)",
+    "kashef-201-feature-1-item-2": "فقدان الطاقة (LED أصفر)",
+    "kashef-201-feature-1-item-3": "بطارية منخفضة (LED أزرق)",
+    "kashef-201-feature-2": "واجهة سهلة الاستخدام:",
+    "kashef-201-feature-2-item-1":
+      "زر اختبار/إعادة ضبط للاختبار اليدوي وإعادة الضبط.",
+    "kashef-201-feature-2-item-2": "وقت إعادة ضبط قابل للتعديل عبر مفاتيح DIP.",
+    "kashef-201-feature-2-item-3": "إعدادات تيار خطأ متعددة المستويات.",
+    "kashef-201-feature-3": "وظائف إعادة الضبط التلقائية:",
+    "kashef-201-feature-3-item-1":
+      "إعادة ضبط على أساس الوقت: يمسح الإنذار بعد فترة محددة إذا اختفى الخطأ.",
+    "kashef-201-feature-3-item-2":
+      "إعادة ضبط استعادة الطاقة: يعيد الضبط عند استعادة طاقة التيار المتردد.",
+    "kashef-201-feature-3-item-3":
+      "إعادة ضبط عابرة: يمسح الأخطاء تلقائيًا في غضون 10 ثوانٍ إذا ظل جهد الإمداد موجودًا.",
+    "kashef-201-feature-4": "عمر بطارية طويل وصيانة سهلة:",
+    "kashef-201-feature-4-item-1": "عمر بطارية أكثر من 10 سنوات.",
+    "kashef-201-feature-4-item-2": "مصدر طاقة احتياطي خالٍ من الصيانة.",
+    "kashef-201-feature-4-item-3": "استبدال البطارية بسهولة.",
+    "kashef-201-feature-5": "تنبيهات الأعطال:",
+    "kashef-201-feature-5-item-1": "مؤشرات LED تشير إلى الأعطال المختلفة.",
+    "kashef-201-feature-5-item-2": "إشعارات SMS للتنبيهات في الوقت الفعلي.",
+    "kashef-201-feature-5-item-3":
+      "إشارات IEC104 يتم الوصول إليها من خلال عنوان IP للشريحة المثبتة.",
+    "kashef-201-feature-6": "خيارات إعادة الضبط:",
+    "kashef-201-feature-6-item-1": "إعادة ضبط تلقائية بناءً على إزالة الخطأ.",
+    "kashef-201-feature-6-item-2": "إعادة ضبط يدوية عبر تطبيق Android، SCADA.",
+    "kashef-201-feature-6-item-3":
+      "إعادة ضبط المؤقت: يعيد ضبط الخطأ إذا مرت مدة زمنية محددة مسبقًا دون استعادة الطاقة لمنع حلقة إشارة لا نهائية.",
+
+    "kashef-601-title": "كاشف 601",
+    "kashef-601-description":
+      "كاشف EECC-SFPI هو نظام متقدم لمؤشر الخطأ الهوائي مصمم لخطوط الطاقة حتى 70 كيلوفولت. يستخدم مستشعرات CT ووحدة تحكم دقيقة لاكتشاف الدوائر القصيرة وأخطاء التأريض، مما يحسن أوقات الاستجابة وموثوقية الشبكة.",
+    "kashef-601-feature-1":
+      "المراقبة في الوقت الفعلي: يتتبع تغيرات الموجة للكشف الدقيق عن الأخطاء.",
+    "kashef-601-feature-2":
+      "مؤشر خطأ مرئي: LED عالي السطوع بزاوية 360 درجة للرؤية نهارًا وليلًا.",
+    "kashef-601-feature-3":
+      "التركيب الجماعي: يتم تركيبه عادةً في مجموعات من 3، مع جهاز واحد يتعامل مع اتصال 4G.",
+    "kashef-601-feature-4":
+      "اتصال البلوتوث: يمكّن الاتصال المحلي بين الأجهزة والمشغلين لتبادل البيانات والتكوين.",
+    "kashef-601-feature-5":
+      "تعزيز سلامة توزيع الطاقة: يقلل من وقت التوقف، ويحسن كفاءة الصيانة، ويخفض تكاليف التشغيل.",
   },
   en: {
     translate: "العربية",
+
+    //nav section
     "home-link": "Home",
     "about-link": "About",
     "products-link": "Products",
     "contact-link": "Contact us",
+
+    //buttons
+    "learn-more-btn": "Learn More",
+    "download-data-sheet": "Download Data Sheet",
+    "download-operation-manual": "Download Operation Manual",
+    "watch-video": "Watch Video",
+    close: "Close",
+
+    //about us
     "about-title": "About Us",
     "about-text-1":
       "EECC was established to introduce cutting-edge AI and IoT technologies into the Smart Energy Monitoring Equipment sector. Aligned with Saudi Vision 2030’s objectives of technological advancement and innovation, we strive to contribute to the Kingdom’s technological progress.",
     "about-text-2":
       "We are honored to be recognized with the Made in Saudi registration certificate, a mark of our dedication to quality and national pride. Our innovative approach and reliable products have earned the trust of major industry players, including the Saudi Electricity Company (SEC). As a key supplier, we provide SEC with Advanced Smart Monitoring Systems, empowering them to maintain high standards of power distribution.",
+
+    //pdlc section
     "pdlc-title": "Product Development Life Cycle (PDLC)",
     "pdlc-item-1": "Idea Generation",
     "pdlc-item-2": "Research and Opportunity Exploration",
@@ -345,66 +407,24 @@ const translations = {
     "pdlc-item-4": "Continuous Development",
     "pdlc-item-5": "Testing and Verification",
     "pdlc-item-6": "Launch",
+
+    //products section
     "products-title": "Our Products",
     "product-title-1": "Fault Indicators",
     "product-title-2": "Smart Distribution Equipment",
     "product-title-3": "Smart Home Systems",
-    "learn-more-btn": "Learn More",
     "product-text-1":
       "Fault indicators are essential monitoring devices used in electrical power systems to detect and signal faults such as short circuits, ground faults, or overloads. These devices enhance grid reliability by quickly identifying fault locations, reducing downtime, and improving maintenance efficiency.",
     "product-text-2":
       "Smart distribution equipment enhances power grid efficiency, reliability, and automation by integrating advanced sensors, communication technologies, and AI-driven analytics. These devices enable real-time monitoring, fault detection, and remote control, optimizing energy distribution while reducing downtime and operational costs.",
     "product-text-3":
       "Smart home systems use interconnected devices and automation technology to enhance convenience, security, and energy efficiency. These systems allow remote control of lighting, climate, security, and appliances via mobile apps or voice assistants, creating a more comfortable and intelligent living environment.",
-    "smart-home-title": "Smart Home Systems",
-    "smart-home-subtitle": "Full control and absolute comfort",
-    "smart-home-feature-1": "Remote control through the EECC smart home app",
-    "smart-home-feature-2": "Schedule device operation and shutdown",
-    "smart-home-feature-3":
-      "Energy saving through smart consumption management",
-    "smart-home-feature-4": "Integration with other smart home devices",
-    "smart-switch-title": "WIFI-RF Smart Switch",
-    "smart-switch-subtitle": "Flexible and easy-to-use wireless control",
-    "smart-switch-feature-1":
-      "Support for both radio frequency and Wi-Fi technologies",
-    "smart-switch-feature-2": "Ability to install in difficult locations",
-    "smart-switch-feature-3": "Easy integration with the EECC smart home app",
-    "smart-switch-feature-4": "Enhanced security through wireless control",
-    "kashef-501-title": "KASHEF - 501",
-    "kashef-501-subtitle": "Overhead Fault Indicators",
-    "kashef-501-feature-1":
-      "Smart AC waveform tracking to distinguish between different types of faults in three-phase systems",
-    "kashef-501-feature-2":
-      "Wide range of effective detection devices from 1 Ampere up to 1000 Amperes",
-    "kashef-501-feature-3":
-      "Smaller peripheral devices enable easier installation using the embedded communication system",
-    "kashef-501-feature-4":
-      "Fully renewable energy powered using solar and energy harvesting technologies to enhance grid sustainability",
-    "kashef-501-feature-5": "Support for preventive maintenance",
-    "kashef-001-title": "KASHEF - 001",
-    "kashef-001-subtitle": "Enhance Reliable Efficiency Detection",
-    "kashef-001-feature-1": "Precise ground fault detection",
-    "kashef-001-feature-2": "Robust design",
-    "kashef-001-feature-3": "Multi-color indicator",
-    "kashef-001-feature-4": "User-friendly interface",
-    "sefi-solar-kit-title": "SEFI - Solar Power Kit",
-    "sefi-solar-kit-description":
-      "EECC has developed a solar power kit as an optional solution to power EECC-SEFI in cases where SEFI is installed on RMUs that do not have a connected distribution substation, or the distribution substation is remote.",
-    "kashef-501-overhead-fault-indicator-title": "Overhead Fault Indicators",
-    "kashef-501-multifunctional-fault-detection-system-title":
-      "Multifunctional Fault Detection System",
-    "kashef-501-feature-1":
-      "Smart AC waveform tracking to distinguish between different types of faults in three-phase systems.",
-    "kashef-501-feature-2":
-      "Wide range of effective detection from 1 Ampere up to 1000 Amperes.",
-    "kashef-501-feature-3":
-      "Fully renewable energy powered using solar and energy harvesting technologies.",
-    "kashef-501-feature-4":
-      "Direct reporting to SCADA systems without the need for an intermediate gateway.",
-    "kashef-501-feature-5":
-      "Smart AC waveform tracking: Distinguishes between different types of faults in three-phase systems, improving fault detection accuracy.",
+
+    //video section
     "doctors-section-title": "Product Demonstration",
     "kashef-101-video-author": '"Kashef 101" Smart Fault Indicator',
+
+    //qhse ssection
     "qhse-policy-title": "EECC - QHSE POLICY",
     "qhse-policy-subtitle": "Integrated Guideline",
     "qhse-quality-title": "Quality",
@@ -419,6 +439,8 @@ const translations = {
     "qhse-environment-title": "Environment",
     "qhse-environment-description":
       "Commitment to sustainable practices and reducing our environmental footprint.",
+
+    //contact section
     "contact-section-title": "• Contact Us •",
     "contact-name-label": "Name",
     "contact-email-label": "Email",
@@ -427,6 +449,8 @@ const translations = {
     "contact-submit-btn": "Submit",
     "contact-info-title": "Contact Information",
     "join-us-message": "❝ Pioneering Smart Energy Monitoring Solutions",
+
+    //footer section
     "footer-contact-title": "Contact Us",
     "footer-quick-links-title": "Quick Links",
     "footer-quick-link-home": "Home",
@@ -434,105 +458,212 @@ const translations = {
     "footer-quick-link-products": "Our Products",
     "footer-quick-link-contact": "Contact Us",
     "footer-copyright": "©2024 Ekhtbarat Engineering. All rights reserved.",
-    "kashef-201-title": "KASHEF - 201",
-    "kashef-201-description":
-      "Smart ground fault indicator with advanced real-time monitoring and control features.",
-    "kashef-201-connectivity-title": "Connectivity",
-    "kashef-201-connectivity-description":
-      "Real-time device monitoring and control using SCADA systems or mobile operator via SMS",
-    "kashef-201-accuracy-title": "Accurate Ground Fault Detection",
-    "kashef-201-accuracy-description":
-      "Uses electromagnetic induction and precise computer control for accurate fault detection",
-    "kashef-201-design-title": "Rugged Design",
-    "kashef-201-design-description":
-      "High accuracy, strong interference resistance, and long battery life",
-    "kashef-201-interface-title": "User-friendly Interface",
-    "kashef-201-interface-description":
-      "Test/reset button for easy testing and reset functions",
-    "kashef-201-what-is-it": "What is KASHEF 201?",
-    "kashef-201-explanation":
-      "EECC-SEFI is a smart ground fault indicator, widely used in RMU and Switch-Gear equipment to detect ground faults in power transmission lines with communication features that enable remote monitoring and control",
-    "smart-home-systems-title": "Smart Home Systems",
-    "smart-home-systems-description":
-      "Smart home systems allow full control of electrical appliances and lighting systems in homes through mobile applications, providing a comfortable and secure living experience.",
-    "smart-home-remote-control": "Remote control via EECC Smart Home app",
-    "smart-home-scheduling": "Scheduling of device operation",
-    "smart-home-energy-savings":
-      "Energy savings through smart consumption management",
-    "smart-home-integration": "Integration with other smart home devices",
-    "smart-home-systems-offering":
-      "EECC offers unique control systems for smart homes.",
-    "wifi-rf-smart-switch-title": "WIFI-RF Smart Switch",
-    "wifi-rf-smart-switch-description":
-      "The WIFI-RF smart switch provides users with wireless control of electrical devices using both WIFI and RF technologies, enabling flexibility and ease of use.",
-    "wifi-rf-smart-switch-rf-wifi-support":
+
+    // Smart Home Solutions page translations
+    "section-title-smart-home": "Smart Home Systems",
+    "wifi-switches-title": "WIFI SWITCHES",
+    "wifi-switches-description":
+      "This smart switch with WIFI technology allows remote control of electrical devices through WIFI, making device management easier and enhancing the user experience",
+    "wifi-switches-feature-1": "Remote control via WIFI network",
+    "wifi-switches-feature-2": "Ease of installation and use",
+    "wifi-switches-feature-3": "Support for programming and daily scheduling",
+    "wifi-rf-switch-title": "SMART SWITCH WITH WIFI/RF TECHNOLOGY",
+    "wifi-rf-switch-description":
+      "The smart switch with WIFI-RF technology provides users with wireless control over electrical devices using both WIFI and RF technologies, offering flexibility and ease of use.",
+    "wifi-rf-switch-feature-1":
       "Support for both RF and WIFI technologies for multiple control options",
-    "wifi-rf-smart-switch-installation":
-      "Ability to install in hard-to-reach locations",
-    "wifi-rf-smart-switch-integration":
-      "Easy integration with EECC Smart Home app",
-    "wifi-rf-smart-switch-security":
-      "Enhanced security through wireless control",
-    "kashef-501-title": "KASHEF-501",
-    "kashef-501-description":
-      "Overhead fault indicators quickly detect faults in electrical distribution systems, helping to reduce outage times and improve grid performance.",
-    "kashef-501-ac-waveform-monitoring":
-      "Smart AC waveform monitoring to distinguish between different types of three-phase system faults",
-    "kashef-501-detection-range":
-      "Wide effective detection range from 1 Amp to 1000 Amps",
-    "kashef-501-easy-installation":
-      "Minimal accessories for easy installation with integrated communication system",
-    "kashef-501-renewable-power":
-      "Fully renewable-powered using solar and energy harvesting technologies",
-    "kashef-501-grid-sustainability": "Enhances electric grid sustainability",
-    "kashef-501-preventive-maintenance": "Supports preventive maintenance",
-    "kashef-001-title":
-      "KASHEF 001 - Reliable Detection and Enhanced Efficiency",
-    "kashef-001-what-is-it": "What is KASHEF 001?",
-    "kashef-001-explanation":
-      "EECC-EFI is a ground fault indicator, widely used in RMU and Switch-Gear equipment to detect ground faults in power transmission lines",
-    "kashef-001-accuracy-title": "Accurate Ground Fault Detection",
-    "kashef-001-accuracy-description":
-      "Uses electromagnetic induction and precise computer control for accurate fault detection",
-    "kashef-001-design-title": "Rugged Design",
-    "kashef-001-design-description":
-      "High accuracy, strong interference resistance, and long battery life",
-    "kashef-001-indicator-title": "Multi-color Indicator",
-    "kashef-001-indicator-description":
-      "LED indicators for instant fault visibility: red for ground fault, yellow for power loss, blue for low battery",
-    "kashef-001-interface-title": "User-friendly Interface",
-    "kashef-001-interface-description":
-      "Test/reset button for easy testing and reset functions",
-    "sefi-solar-power-kit": "SEFI - Solar Power Kit",
-    "sefi-solar-power-kit-details": "Details of the SEFI Solar Power Kit",
-    "sefi-solar-power-kit-description":
-      "EECC has developed a solar power kit as an optional solution to provide EECC-SEFI power in cases where SEFI is installed on RMUs that do not have a connected distribution substation, or where the distribution substation is located far away.",
-    "smart-overhead-error-path-indicator":
-      "Smart Overhead Error Path Indicator",
-    "smart-overhead-error-path-indicator-title":
-      "Smart Overhead Error Path Indicator",
-    "features-title": "Features",
-    "feature-1":
-      "Intelligent waveform tracking to distinguish between different types of three-phase system faults, improving fault detection accuracy.",
-    "feature-2":
-      "Wide detection range: Efficiently detects currents from 1 Ampere to 1000 Amperes, making it suitable for various applications.",
-    "feature-3":
-      "Renewable energy: Fully operates with solar power and energy harvesting technologies.",
-    "feature-4":
-      "Integrated sensing technology: Efficiently detects electrical faults.",
-    "feature-5":
-      "RF and GPRS communication: Enables remote monitoring and data transmission.",
-    "feature-6":
-      "GIS Positioning: Allows for accurate fault location tracking.",
-    "feature-7":
-      "Cost-effective: Reduces labor, vehicle usage, and operational costs.",
-    "feature-8":
-      "Fault LED indicators: Identify fault types with distinctive color signals.",
-    "feature-9":
-      "Optional accessories: Include a PDA for remote control and a mounting adapter for flexible use.",
-    "feature-10":
-      "Direct IEC104 and DNP3.0 reporting to SCADA systems without the need for an intermediate gateway.",
-    "section-title": "Smart Distribution Systems",
+    "wifi-rf-switch-feature-2":
+      "Installation capability in hard-to reach locations",
+    "wifi-rf-switch-feature-3":
+      "Easy integration with home EECC Smart Home App",
+    "wifi-rf-switch-feature-4": "Enhanced security through wireless control",
+
+    // Fault Indicators page translations
+    //kashef-101
+    "section-title-fault-indicators": "Fault Indicators",
+    "kashef-101-title": "KASHEF 101",
+    "kashef-101-description":
+      "The EECC-SFI is a Smart Fault Indicator designed for underground power cables in RMU systems. It detects earth faults and overcurrent faults, enhancing power network reliability and reducing downtime. The device uses electromagnetic induction and an intelligent MCU, with Wi-Fi and cellular communication (IEC104) for remote monitoring.",
+    "kashef-101-feature-1": <b>"✔ Accurate Fault Detection:"</b>,
+    "kashef-101-feature-1-item-1": "Earth Fault (Red LED)",
+    "kashef-101-feature-1-item-2": "Short Circuit Fault (Phase Red LED)",
+    "kashef-101-feature-1-item-3": "Power Loss (Yellow LED)",
+    "kashef-101-feature-1-item-4": "Low Battery (Blue LED)",
+    "kashef-101-feature-2":
+      "Remote Communication: External bracket for mounting, sensor clamps for cables.",
+    "kashef-101-feature-3":
+      "Wi-Fi Web Server: Simplifies configuration and parameter settings.",
+    "kashef-101-feature-4":
+      "Automatic Reset: Resets after fault clearance via voltage restoration, or transient faults.",
+    "kashef-101-feature-5":
+      "Timer Reset: Resets the fault if a pre-defined time duration has passed without power restored to prevent end-less indication loop.",
+    "kashef-101-feature-6": "Manual Reset: Reset via Test/Reset button.",
+    "kashef-101-feature-7": "Remote Test/Reset: Via SCADA systems.",
+    "kashef-101-feature-8":
+      "Current Measurement: Zero-sequence & phase current monitoring via IEC104.",
+    "kashef-101-feature-9":
+      "Long Battery Life: Over 5 years, easily replaceable without tools.",
+    "kashef-101-feature-10":
+      "Easy Installation: External bracket for mounting, sensor clamps for cables.",
+    //kashef-002
+    "kashef-002-title": "KASHEF 002",
+    "kashef-002-description":
+      "The EECC-FI is a 3 phase Fault Indicator designed for underground power cables in RMU systems. It detects and locates earth faults and overcurrent faults, improving network reliability and reducing downtime. The device utilizes electromagnetic induction and an intelligent MCU with Wi-Fi-based configuration for easy setup.",
+    "kashef-002-feature-1":
+      "Accurate Fault Detection: Earth faults (Red LED), Short circuits (Phase Red LED), Power loss (Yellow LED), and Low battery (Blue LED).",
+    "kashef-002-feature-2":
+      "Wi-Fi Web Server: Simplifies configuration and parameter settings.",
+    "kashef-002-feature-3":
+      "Automatic Reset: Resets after fault clearance via voltage restoration, or transient faults.",
+    "kashef-002-feature-4":
+      "Timer Reset: Resets the fault if a pre-defined time duration has passed without power restored to prevent end-less indication loop.",
+    "kashef-002-feature-5": "Manual Reset: Reset via Test/Reset button.",
+    "kashef-002-feature-6":
+      "Current Measurement: Supports zero-sequence and phase current monitoring via MODBUS RTU (RS-485).",
+    "kashef-002-feature-7":
+      "Energy-Efficient Design: Long-life lithium battery, replaceable without tools.",
+    "kashef-002-feature-8":
+      "Easy Installation: External bracket for mounting, sensor clamps for cables.",
+
+    //kashef-001
+    "kashef-001-title": "KASHEF 001",
+    "kashef-001-description":
+      "The EECC-EFI is an Earth Fault Indicator for underground network, designed to detect and locate earth faults in underground cables, enhancing power distribution reliability and reducing downtime.",
+    "kashef-001-feature-1":
+      "Accurate Fault Detection: Uses electromagnetic induction and microcontroller processing.",
+    "kashef-001-feature-2":
+      "LED Alarm Indicators: Red for earth fault, blue for low battery, yellow for power loss.",
+    "kashef-001-feature-3":
+      "Low Power Design: Long-lasting lithium battery (10+ years).",
+    "kashef-001-feature-4":
+      "Automatic Reset: Resets after fault clearance via voltage restoration, or transient faults.",
+    "kashef-001-feature-5":
+      "Timer Reset: Resets the fault if a pre-defined time duration has passed without power restored to prevent end-less indication loop.",
+    "kashef-001-feature-6": "Manual Reset: Reset via Test/Reset button.",
+    "kashef-001-feature-7":
+      "Easy Installation: External bracket for mounting; sensor clamps around power cables.",
+
+    //kashef-201
+    "kashef-201-title": "KASHEF 201",
+    "kashef-201-description":
+      "The EECC-SEFI is a Smart Earth Fault Indicator designed for underground power cables in Ring Main Unit (RMU) systems. It detects and locates earth faults (ground faults), enhances power network reliability and reducing downtime with ability for remote communication to SCADA systems and SMS.",
+    "kashef-201-feature-1": "Accurate Fault Detection:",
+    "kashef-201-feature-1-item-1": "Earth Fault (Red LED)",
+    "kashef-201-feature-1-item-2": "Power Loss (Yellow LED)",
+    "kashef-201-feature-1-item-3": "Low Battery (Blue LED)",
+    "kashef-201-feature-2": "User-Friendly Interface:",
+    "kashef-201-feature-2-item-1":
+      "Test/Reset button for manual testing & resetting.",
+    "kashef-201-feature-2-item-2": "Adjustable reset time via DIP switches.",
+    "kashef-201-feature-2-item-3": "Multi-level fault current settings.",
+    "kashef-201-feature-3": "Automatic Reset Functions:",
+    "kashef-201-feature-3-item-1":
+      "Time-based Reset: Clears alarm after a set period if the fault is gone.",
+    "kashef-201-feature-3-item-2":
+      "Power Restoration Reset: Resets when AC power is restored.",
+    "kashef-201-feature-3-item-3":
+      "Transient Reset: Clears faults automatically within 10s if supply voltage remains present.",
+    "kashef-201-feature-4": "Long Battery Life & Easy Maintenance:",
+    "kashef-201-feature-4-item-1": "10+ years battery life.",
+    "kashef-201-feature-4-item-2": "Maintenance-free backup power supply.",
+    "kashef-201-feature-4-item-3": "Easy battery replacement.",
+    "kashef-201-feature-5": "Fault Alerts:",
+    "kashef-201-feature-5-item-1": "LED Indicators signal different faults.",
+    "kashef-201-feature-5-item-2": "SMS Notifications for real-time alerts.",
+    "kashef-201-feature-5-item-3":
+      "IEC104 signals accessed through the installed SIM's IP address.",
+    "kashef-201-feature-6": "Reset Options:",
+    "kashef-201-feature-6-item-1": "Automatic Reset based on fault clearance.",
+    "kashef-201-feature-6-item-2": "Manual Reset via Android App, SCADA.",
+    "kashef-201-feature-6-item-3":
+      "Timer Reset: Resets the fault if a pre-defined time duration has passed without power restored to prevent end-less indication loop.",
+
+    //kashef-601
+    "kashef-601-title": "KASHEF 601",
+    "kashef-601-description":
+      "The EECC-SFPI is an advanced overhead Fault Indicator system designed for power lines up to 70kV. It utilizes CT sensors and an MCU to detect short circuits and earth faults, improving response times and network reliability.",
+    "kashef-601-feature-1":
+      "Real-Time Monitoring: Tracks waveform changes for precise fault detection.",
+    "kashef-601-feature-2":
+      "Visible Fault Indication: 360° high-brightness LED for visibility day & night.",
+    "kashef-601-feature-3":
+      "Group Installation: Typically installed in sets of 3, with one device handling 4G communication.",
+    "kashef-601-feature-4":
+      "Bluetooth Connectivity: Enables local communication between devices and operators for data exchange & configuration.",
+    "kashef-601-feature-5":
+      "Enhanced Power Distribution Safety: Reduces downtime, improves maintenance efficiency, and lowers operational costs.",
+
+    // Smart Distribution Products page translations
+    //habes-71
+    "section-title-smart-distribution": "Smart Distribution Systems",
+    "kashef-701-title": "HABES 71",
+    "kashef-701-description":
+      "The EECC-DTSMS is an advanced monitoring solution designed to enhance the performance and reliability of distribution transformers. By continuously analyzing critical electrical parameters, it ensures power quality, minimizes losses, and assesses network health.",
+    "kashef-701-feature-1":
+      "Loss Detection: Identifies technical and non-technical losses, helping utilities reduce energy waste and optimize power distribution.",
+    "kashef-701-feature-2":
+      "Real-Time Data Processing: A smart MCU processes collected data, providing live analysis of network conditions.",
+    "kashef-701-feature-3":
+      "SCADA & Smart Meter Integration: Fully compatible with SCADA, enabling remote monitoring and advanced data analytics.",
+    "kashef-701-feature-4": "Power Quality Monitoring",
+    "kashef-701-feature-4-item-1":
+      "Tracks voltage fluctuations, harmonics, power factor, and frequency variations.",
+    "kashef-701-feature-4-item-2":
+      "Identifies anomalies that could affect connected loads and system efficiency.",
+    "kashef-701-feature-5": "Power Loss Analysis",
+    "kashef-701-feature-5-item-1":
+      "Detects technical & non-technical losses in the distribution network.",
+    "kashef-701-feature-5-item-2":
+      "Provides data-driven insights to minimize energy wastage and improve efficiency.",
+    "kashef-701-feature-6": "Network Health Assessment",
+    "kashef-701-feature-6-item-1":
+      "Monitors transformer temperature, load conditions, and insulation status.",
+    "kashef-701-feature-6-item-2":
+      "Detects early signs of failures, enabling predictive maintenance to reduce downtime.",
+    "kashef-701-feature-7": "Data Utilization & Communication",
+    "kashef-701-feature-7-item-1":
+      "Transmits real-time operational data to smart meters & SCADA systems.",
+    "kashef-701-feature-7-item-2":
+      "Enables fault detection, grid optimization, and advanced analytics for improved operational control.",
+
+    //habes-81
+    "kashef-81-title": "HABES 81",
+    "kashef-81-description":
+      "Protection relays are critical devices in electrical power systems designed to detect faults and abnormal conditions, such as overcurrent, overvoltage, and short circuits. They automatically isolate faulty sections of the network by triggering circuit breakers, preventing damage to equipment and minimizing outages.",
+    "kashef-81-feature-1": "Self powered and maintenance free.",
+    "kashef-81-feature-1-item-1":
+      "Operates without an external power supply by drawing power from CT.",
+    "kashef-81-feature-1-item-2":
+      "Sealed, anti-interference design suitable for harsh environments.",
+    "kashef-81-feature-2": "Advanced Protection Functions.",
+    "kashef-81-feature-2-item-1":
+      "Three-stage overcurrent protection with IEC-standard inverse curves.",
+    "kashef-81-feature-2-item-2":
+      "Two-stage zero-sequence (earth fault) protection.",
+    "kashef-81-feature-2-item-3":
+      "Inrush current blocking to prevent false tripping.",
+    "kashef-81-feature-2-item-4":
+      "Overload protection with configurable alarms or trip settings.",
+    "kashef-81-feature-3": "High perfomance processing.",
+    "kashef-81-feature-3-item-1":
+      "Fast fault detection with short-data-window algorithms for rapid response.",
+    "kashef-81-feature-3-item-2":
+      "Supports both external and internal zero-sequence current sampling.",
+    "kashef-81-feature-3-item-3":
+      "Wide measurement range with auto dynamic scaling.",
+    "kashef-81-feature-4": "User Friendly Interface.",
+    "kashef-81-feature-4-item-1":
+      "64x128 LCD display with multilingual support (Chinese/English).",
+    "kashef-81-feature-4-item-2":
+      "Event logging with up to 100 records stored in non-volatile memory.",
+    "kashef-81-feature-4-item-3":
+      "RS-485 communication with open protocols for integration.",
+    "kashef-81-feature-5": "Robust Electrical & Mechanical Design.",
+    "kashef-81-feature-5-item-1": "Wide operating temperature (-30°C to 70°C).",
+    "kashef-81-feature-5-item-2":
+      "IP54-rated enclosure for front and side panels, IP30 for the back panel.",
+    "kashef-81-feature-5-item-3":
+      "High resistance to electromagnetic interference, vibration, and shock.",
   },
 };
 

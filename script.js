@@ -390,7 +390,7 @@ const translations = {
     "download-data-sheet": "Download Data Sheet",
     "download-operation-manual": "Download Operation Manual",
     "watch-video": "Watch Video",
-    close: "Close",
+    "close:":"Close",
 
     //about us
     "about-title": "About Us",
@@ -484,7 +484,7 @@ const translations = {
     "kashef-101-title": "KASHEF 101",
     "kashef-101-description":
       "The EECC-SFI is a Smart Fault Indicator designed for underground power cables in RMU systems. It detects earth faults and overcurrent faults, enhancing power network reliability and reducing downtime. The device uses electromagnetic induction and an intelligent MCU, with Wi-Fi and cellular communication (IEC104) for remote monitoring.",
-    "kashef-101-feature-1": <b>"✔ Accurate Fault Detection:"</b>,
+    "kashef-101-feature-1": "Accurate Fault Detection:",
     "kashef-101-feature-1-item-1": "Earth Fault (Red LED)",
     "kashef-101-feature-1-item-2": "Short Circuit Fault (Phase Red LED)",
     "kashef-101-feature-1-item-3": "Power Loss (Yellow LED)",

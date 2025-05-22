@@ -8,63 +8,6 @@ hamburger.addEventListener('click', () => {
 
 
 
-// Background video animation *****************
-
-//$(function () {
-//    var video = document.getElementById('bgVideo');
-//    var videoSection = $('.video-section');
-//    var videoLength = 0;
-//
-//    video.addEventListener('loadedmetadata', function() {
-//        videoLength = video.duration;
-//    });
-//
-//    $(window).scroll(function () {
-//        var scrollTop = $(this).scrollTop();
-//        var sectionTop = videoSection.offset().top;
-//        var sectionHeight = videoSection.height();
-//        var windowHeight = $(window).height();
-//
-//        if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight - windowHeight) {
-//            var scrollProgress = (scrollTop - sectionTop) / (sectionHeight - windowHeight);
-//            video.currentTime = scrollProgress * videoLength;
-//        } else if (scrollTop < sectionTop) {
-//            video.currentTime = 0;
-//        } else if (scrollTop >= sectionTop + sectionHeight - windowHeight) {
-//            video.currentTime = videoLength;
-//        }
-//    });
-//});
-
-
-
-
-// const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
-// const overlay = document.getElementById('overlay');
-// const overlayContent = document.querySelector('.overlay-content');
-// const productDataContainer = document.getElementById('product-data');
-
-// learnMoreBtns.forEach(btn => {
-//   btn.addEventListener('click', () => {
-//     const productId = btn.getAttribute('data-product-id');
-//     const productData = productDataContainer.querySelector(`[data-product-id="${productId}"]`);
-    
-//     if (productData) {
-//       // Clone the content and append it to the overlay
-//       const content = productData.cloneNode(true);
-//       overlayContent.innerHTML = ''; // Clear previous content
-//       overlayContent.appendChild(content);
-//       overlay.style.display = 'flex';
-//     }
-//   });
-// });
-
-// overlay.addEventListener('click', (e) => {
-//   if (e.target === overlay) {
-//     overlay.style.display = 'none';
-//   }
-// });
-
 // Post Request to the backend to send the email details
 function emailSend() {
   const formData = {
@@ -109,7 +52,7 @@ const translations = {
     "download-data-sheet": "تنزيل ورقة البيانات",
     "download-operation-manual": "تنزيل دليل التشغيل",
     "watch-video": "مشاهدة الفيديو",
-    close: "إغلاق",
+    "close": "إغلاق",
 
     //about section
     "about-title": "من نحن",
@@ -390,7 +333,7 @@ const translations = {
     "download-data-sheet": "Download Data Sheet",
     "download-operation-manual": "Download Operation Manual",
     "watch-video": "Watch Video",
-    "close:":"Close",
+    "close:": "Close",
 
     //about us
     "about-title": "About Us",
